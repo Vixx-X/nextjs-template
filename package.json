@@ -1,0 +1,100 @@
+{
+  "name": "__your_name__",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "pre-commit": "next lint --fix && git add -A .",
+    "find:unused": "next-unused"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.17",
+    "@headlessui/react": "^1.4.2",
+    "@splidejs/react-splide": "^0.6.5",
+    "axios": "^0.27.2",
+    "cookies": "^0.8.0",
+    "formik": "^2.2.9",
+    "framer-motion": "^6.2.4",
+    "next": "12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.4.0",
+    "react-paginate": "^8.1.2",
+    "react-syntax-highlighter": "^15.4.5",
+    "sharp": "^0.30.2",
+    "swr": "^1.1.2",
+    "zustand": "^4.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.4.0",
+    "@trivago/prettier-plugin-sort-imports": "^3.1.1",
+    "@types/cookies": "^0.7.7",
+    "@types/node": "17.0.8",
+    "@types/react": "17.0.38",
+    "@types/react-syntax-highlighter": "^13.5.2",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.6.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^7.0.4",
+    "postcss": "^8.3.9",
+    "prettier": "^2.4.1",
+    "prettier-eslint": "^13.0.0",
+    "tailwindcss": "^3.0.12",
+    "typescript": "4.5.4"
+  },
+  "next-unused": {
+    "alias": {
+      "@assets": [
+        "assets/"
+      ],
+      "@components": [
+        "components/"
+      ],
+      "@config": [
+        "config.ts"
+      ],
+      "@context": [
+        "context/"
+      ],
+      "@hooks": [
+        "hooks/"
+      ],
+      "@pages": [
+        "pages/"
+      ],
+      "@public": [
+        "public/"
+      ],
+      "@stores": [
+        "stores/"
+      ],
+      "@styles": [
+        "styles/"
+      ],
+      "@utils": [
+        "utils/"
+      ],
+      "@types": [
+        "types/"
+      ],
+      "@services": [
+        "services/"
+      ]
+    },
+    "include": [
+      "src"
+    ],
+    "exclude": [],
+    "entrypoints": [
+      "src/pages"
+    ]
+  }
+}
