@@ -1,13 +1,18 @@
-import Loader from "@components/Loader";
-import { ErrorMsg } from "@components/forms/ErrorMsg";
-import { Form } from "@components/forms/Form";
-import { PassField } from "@components/forms/PassField";
-import { SERVER_URLS } from "@config";
-import authStore from "@stores/AuthStore";
-import { Field, FormikValues } from "formik";
-import type { NextPage } from "next";
-import Link from "next/link";
-import { useState } from "react";
+import { useState } from 'react';
+
+import type { NextPage } from 'next';
+import Link from 'next/link';
+
+import Loader from '@components/Loader';
+import { ErrorMsg } from '@components/forms/ErrorMsg';
+import { Form } from '@components/forms/Form';
+import { PassField } from '@components/forms/PassField';
+
+import { SERVER_URLS } from '@config';
+
+import authStore from '@stores/AuthStore';
+
+import { Field, FormikValues } from 'formik';
 
 const { URL_REGISTER, URL_PASSWORD_RESET } = SERVER_URLS;
 
@@ -22,8 +27,8 @@ const LogIn: NextPage = () => {
   const login = authStore((state: any) => state.login);
 
   const initValues = {
-    password: "",
-    username: "",
+    password: '',
+    username: '',
   } as SigninForm;
 
   const handleSubmit = async (values: FormikValues, { setStatus }: any) => {

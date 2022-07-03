@@ -1,4 +1,4 @@
-import { Field } from "./Field";
+import { Field } from './Field';
 
 interface SelectProps extends Props {
   placeholder: string;
@@ -9,7 +9,7 @@ export const Select = ({ choices, placeholder, ...props }: SelectProps) => {
   return (
     <Field as="select" {...props}>
       <>
-        <option disabled>{placeholder ?? "--Seleccionar--"}</option>
+        <option disabled>{placeholder ?? '--Seleccionar--'}</option>
         {choices?.map(({ value, text }: any, index: number) => (
           <option value={value} key={index}>
             {text}

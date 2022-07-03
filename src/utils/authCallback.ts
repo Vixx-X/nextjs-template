@@ -1,5 +1,6 @@
-import { API_BASE_URL } from "@config";
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+import { API_BASE_URL } from '@config';
 
 export default async function authCallback(
   req: NextApiRequest,
@@ -15,23 +16,23 @@ export default async function authCallback(
   }
 ) {
   if (!req.method) {
-    res.setHeader("Allow", ["POST"]);
+    res.setHeader('Allow', ['POST']);
     return res.status(405).json({ error: `Only POST method allowed` });
   }
 
-  if (req.method.toUpperCase() !== "POST") {
-    res.setHeader("Allow", ["POST"]);
+  if (req.method.toUpperCase() !== 'POST') {
+    res.setHeader('Allow', ['POST']);
     return res.status(405).json({ error: `Method ${req.method} not allowed` });
   }
 
   try {
     const response = await fetch(`${API_BASE_URL}${url}`, {
-      method: "POST",
-      mode: "cors", // no-cors, *cors, same-origin
-      credentials: "include", // include, *same-origin, omit, include
+      method: 'POST',
+      mode: 'cors', // no-cors, *cors, same-origin
+      credentials: 'include', // include, *same-origin, omit, include
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
     });
@@ -39,6 +40,6 @@ export default async function authCallback(
     if (!response.ok) return errorCallback(response, result);
     return callback(response, result);
   } catch (err) {
-    return res.status(500).json({ error: "Something went wrong" });
+    return res.status(500).json({ error: 'Something went wrong' });
   }
 }

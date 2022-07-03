@@ -1,14 +1,19 @@
-import Loader from "@components/Loader";
-import ErrorMsg from "@components/forms/ErrorMsg";
-import Field from "@components/forms/Field";
-import Form from "@components/forms/Form";
-import PassField from "@components/forms/PassField";
-import Select from "@components/forms/Select";
-import { postRegisterUser } from "@fetches/user";
-import authStore from "@stores/AuthStore";
-import { FormikValues } from "formik";
-import type { NextPage } from "next";
-import { useState } from "react";
+import { useState } from 'react';
+
+import type { NextPage } from 'next';
+
+import Loader from '@components/Loader';
+import ErrorMsg from '@components/forms/ErrorMsg';
+import Field from '@components/forms/Field';
+import Form from '@components/forms/Form';
+import PassField from '@components/forms/PassField';
+import Select from '@components/forms/Select';
+
+import { postRegisterUser } from '@fetches/user';
+
+import authStore from '@stores/AuthStore';
+
+import { FormikValues } from 'formik';
 
 interface SignupForm {
   first_name: string;
@@ -23,9 +28,9 @@ interface SignupForm {
 }
 
 const TypeOfDocumentIDChoices = [
-  { value: "V", text: "V" },
-  { value: "J", text: "J" },
-  { value: "E", text: "E" },
+  { value: 'V', text: 'V' },
+  { value: 'J', text: 'J' },
+  { value: 'E', text: 'E' },
 ];
 
 const Registro: NextPage = () => {
@@ -34,15 +39,15 @@ const Registro: NextPage = () => {
   const login = authStore((state: any) => state.login);
 
   const initValues: SignupForm = {
-    first_name: "",
-    last_name: "",
-    email: "",
-    username: "",
-    password1: "",
-    password2: "",
-    tel: "",
+    first_name: '',
+    last_name: '',
+    email: '',
+    username: '',
+    password1: '',
+    password2: '',
+    tel: '',
     number: 0,
-    typeOfDocumentID: "v",
+    typeOfDocumentID: 'v',
   };
 
   const handleSubmit = async (values: FormikValues, { setStatus }: any) => {

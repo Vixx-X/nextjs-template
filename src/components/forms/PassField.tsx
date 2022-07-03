@@ -1,12 +1,14 @@
-import { Field } from "./Field";
-import React, { useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import React, { useState } from 'react';
+
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
+import { Field } from './Field';
 
 export const PassField = (props: Props) => {
-  const [fieldType, setFieldType] = useState("password");
+  const [fieldType, setFieldType] = useState('password');
 
   const togglePass = () => {
-    fieldType === "password" ? setFieldType("text") : setFieldType("password");
+    fieldType === 'password' ? setFieldType('text') : setFieldType('password');
   };
 
   return (
@@ -17,7 +19,7 @@ export const PassField = (props: Props) => {
           className="absolute flex justify-center h-full right-3 cursor-pointer"
           onClick={togglePass}
         >
-          {fieldType === "text" ? (
+          {fieldType === 'text' ? (
             <FaEyeSlash size={25} />
           ) : (
             <FaEye size={25} />

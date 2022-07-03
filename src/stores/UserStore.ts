@@ -1,5 +1,5 @@
-import { User } from "user";
-import create from "zustand";
+import { User } from 'user';
+import create from 'zustand';
 
 interface UserState {
   user: User | null;

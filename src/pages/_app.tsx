@@ -1,10 +1,13 @@
-import { AuthContextProvider } from "@contexts/AuthContext";
-import { UserContextProvider } from "@contexts/UserContext";
-import "@styles/globals.css";
-import { localStorageProvider } from "@utils/localStorageProvider";
-import { AnimatePresence } from "framer-motion";
-import type { AppProps } from "next/app";
-import { SWRConfig } from "swr";
+import type { AppProps } from 'next/app';
+
+import '@styles/globals.css';
+
+import { localStorageProvider } from '@utils/localStorageProvider';
+
+import { AuthContextProvider } from '@contexts/AuthContext';
+import { UserContextProvider } from '@contexts/UserContext';
+import { AnimatePresence } from 'framer-motion';
+import { SWRConfig } from 'swr';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

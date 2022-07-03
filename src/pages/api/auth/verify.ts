@@ -1,8 +1,8 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { AUTH_URLS } from '@config';
 
 import authCallback from '@utils/authCallback';
-
-import type { NextApiRequest, NextApiResponse } from 'next';
 
 const { URL_TOKEN_VERIFY } = AUTH_URLS;
 

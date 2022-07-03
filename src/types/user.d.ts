@@ -1,6 +1,6 @@
 enum PersonType {
-  NATURAL = "NATURAL",
-  JURIDIC = "JURIDIC",
+  NATURAL = 'NATURAL',
+  JURIDIC = 'JURIDIC',
 }
 
 export interface User {

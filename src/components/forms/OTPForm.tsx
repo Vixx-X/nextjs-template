@@ -1,9 +1,11 @@
-import Loader from "@components/Loader";
-import ErrorMsg from "@components/forms/ErrorMsg";
-import Field from "@components/forms/Field";
-import Form from "@components/forms/Form";
-import { postOTPRequest } from "@fetches/user";
-import { useState } from "react";
+import { useState } from 'react';
+
+import Loader from '@components/Loader';
+import ErrorMsg from '@components/forms/ErrorMsg';
+import Field from '@components/forms/Field';
+import Form from '@components/forms/Form';
+
+import { postOTPRequest } from '@fetches/user';
 
 interface OTPFormProps extends Props {
   sendFormData: Function;
@@ -36,7 +38,7 @@ const OTPForm = ({
       clearInterval(intervalTimer);
     } catch (exception: any) {
       const info = exception.info;
-      if (!Object.prototype.hasOwnProperty.call(info, "token")) {
+      if (!Object.prototype.hasOwnProperty.call(info, 'token')) {
         toggleOTP(false);
       }
       setStatus(exception.data);
@@ -96,7 +98,7 @@ const OTPForm = ({
                 type="submit"
                 className="bg-primary-new rounded-md py-3 text-white font-extrabold w-full lg:w-96 primary"
               >
-                {expiredTime == 0 ? "Atras" : "Enviar"}
+                {expiredTime == 0 ? 'Atras' : 'Enviar'}
               </button>
             </>
           ) : (

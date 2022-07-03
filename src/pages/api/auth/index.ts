@@ -1,9 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { AUTH_URLS, REFRESH_MAX_AGE } from '@config';
 
 import authCallback from '@utils/authCallback';
 
 import Cookies from 'cookies';
-import type { NextApiRequest, NextApiResponse } from 'next';
 
 const { URL_TOKEN_AUTH } = AUTH_URLS;
 

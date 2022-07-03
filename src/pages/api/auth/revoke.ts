@@ -1,5 +1,6 @@
-import Cookies from 'cookies';
 import type { NextApiRequest, NextApiResponse } from 'next';
+
+import Cookies from 'cookies';
 
 interface ApiResponse {
   message: string;

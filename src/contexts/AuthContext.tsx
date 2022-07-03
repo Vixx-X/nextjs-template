@@ -1,8 +1,12 @@
-import { SERVER_URLS } from "@config";
-import authStore from "@stores/AuthStore";
-import { filterOpenRedirect } from "@utils/filterOpenRedirect";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect } from 'react';
+
+import { useRouter } from 'next/router';
+
+import { SERVER_URLS } from '@config';
+
+import authStore from '@stores/AuthStore';
+
+import { filterOpenRedirect } from '@utils/filterOpenRedirect';
 
 export const AuthContextProvider = ({ children }: Props) => {
   const update = authStore((state: any) => state.update);

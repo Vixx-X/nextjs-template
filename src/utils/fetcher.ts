@@ -1,7 +1,10 @@
-import { API_BASE_URL } from "@config";
-import { _authStore } from "@stores/AuthStore";
-import { _assertApiError } from "@utils/assertApiError";
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import { API_BASE_URL } from '@config';
+
+import { _authStore } from '@stores/AuthStore';
+
+import { _assertApiError } from '@utils/assertApiError';
+
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 let isAlreadyFetchingAccessToken = false;
 
@@ -97,7 +100,7 @@ const errResp = (error: AxiosError) => {
   } else {
     // Something happened in setting up the request that triggered an Error
     // THIS SHOULD NEVER HAPPEN IF YOU CODE OK
-    console.log("Error >:(", error.message);
+    console.log('Error >:(', error.message);
   }
   return {
     data: error?.response?.data,

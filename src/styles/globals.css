@@ -47,7 +47,7 @@ a {
     rgba(233, 233, 233, 0.8) 100%
   );
   animation: shimmer 2.5s ease-out infinite;
-  content: "";
+  content: '';
 }
 
 .form-radio {

@@ -1,10 +1,14 @@
-import Loader from "@components/Loader";
-import ErrorMsg from "@components/forms/ErrorMsg";
-import Form from "@components/forms/Form";
-import { postResetPassword } from "@fetches/user";
-import { Field } from "formik";
-import type { NextPage } from "next";
-import { useState } from "react";
+import { useState } from 'react';
+
+import type { NextPage } from 'next';
+
+import Loader from '@components/Loader';
+import ErrorMsg from '@components/forms/ErrorMsg';
+import Form from '@components/forms/Form';
+
+import { postResetPassword } from '@fetches/user';
+
+import { Field } from 'formik';
 
 interface PasswordResetForm {
   email: string;
@@ -15,7 +19,7 @@ const PasswordReset: NextPage = () => {
   const [loading, setLoading] = useState(false);
 
   const initValues = {
-    email: "",
+    email: '',
   } as PasswordResetForm;
 
   const handleSubmit = async (values: any, { setStatus }: any) => {

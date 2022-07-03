@@ -1,6 +1,7 @@
-import authStore from "@stores/AuthStore";
-import userStore from "@stores/UserStore";
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
+
+import authStore from '@stores/AuthStore';
+import userStore from '@stores/UserStore';
 
 const Home: NextPage = () => {
   const logout = authStore((state: any) => state.logout);

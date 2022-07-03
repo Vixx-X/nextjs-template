@@ -1,6 +1,7 @@
-import { postLogin, postRefresh, postRevoke } from "@fetches/auth";
-import create from "zustand";
-import _create from "zustand/vanilla";
+import { postLogin, postRefresh, postRevoke } from '@fetches/auth';
+
+import create from 'zustand';
+import _create from 'zustand/vanilla';
 
 interface AuthState {
   access_token: string;
@@ -14,7 +15,7 @@ interface AuthState {
   refresh: Function;
 }
 
-const INVALID_TOKEN = ""; // leave blank
+const INVALID_TOKEN = ''; // leave blank
 
 // This vanilla store will only save the auth state and tokens and it will
 // handle its transitions
@@ -27,7 +28,7 @@ export const _authStore = _create<AuthState>()((set, get) => ({
   login: async (username: string, password: string) => {
     const tokens = await postLogin(username, password);
     set({ access_token: tokens.access, isAuth: true });
-    localStorage.setItem("auth", "true");
+    localStorage.setItem('auth', 'true');
     get().loginCallback?.();
     return tokens;
   },
@@ -38,7 +39,7 @@ export const _authStore = _create<AuthState>()((set, get) => ({
       access_token: INVALID_TOKEN,
       isAuth: false,
     });
-    localStorage.setItem("auth", "false");
+    localStorage.setItem('auth', 'false');
     get().logoutCallback?.();
   },
   logoutCallback: null,
@@ -46,14 +47,14 @@ export const _authStore = _create<AuthState>()((set, get) => ({
     const newTokens = await postRefresh();
     if (!newTokens) return null;
     set({ access_token: newTokens.access, isAuth: true });
-    localStorage.setItem("auth", "true");
+    localStorage.setItem('auth', 'true');
     return newTokens;
   },
   update: (loginCallback: Function, logoutCallback: Function) => {
     set({
       loginCallback,
       logoutCallback,
-      isAuth: localStorage.getItem("auth") === "true",
+      isAuth: localStorage.getItem('auth') === 'true',
     });
   },
 }));

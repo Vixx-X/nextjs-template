@@ -1,5 +1,6 @@
-import { _authStore } from "@stores/AuthStore";
-import { AxiosRequestConfig, AxiosRequestHeaders } from "axios";
+import { _authStore } from '@stores/AuthStore';
+
+import { AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
 
 export function _makeFetchOptions(
   options: AxiosRequestConfig = {},
@@ -9,7 +10,7 @@ export function _makeFetchOptions(
     withCredentials: true,
     ...options,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
   };

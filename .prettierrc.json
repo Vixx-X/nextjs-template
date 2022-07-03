@@ -1,0 +1,23 @@
+{
+  "singleQuote": true,
+  "importOrder": [
+    "^react$",
+    "^next(.*)$",
+    "^@assets/(.*)$",
+    "^@components/(.*)$",
+    "^@config$",
+    "^@config/(.*)$",
+    "^@context/(.*)$",
+    "^@fetches/(.*)$",
+    "^@hooks/(.*)$",
+    "^@pages/(.*)$",
+    "^@public/(.*)$",
+    "^@stores/(.*)$",
+    "^@styles/(.*)$",
+    "^@utils/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

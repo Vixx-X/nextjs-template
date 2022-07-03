@@ -1,6 +1,7 @@
-import { SERVER_URLS } from "@config";
-import type { NextPage } from "next";
-import Link from "next/link";
+import type { NextPage } from 'next';
+import Link from 'next/link';
+
+import { SERVER_URLS } from '@config';
 
 const Landing: NextPage = () => {
   return (

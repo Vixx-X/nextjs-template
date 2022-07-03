@@ -1,10 +1,11 @@
-import { API_URLS } from "@config";
-import assertApiError from "@utils/assertApiError";
-import fetcher from "@utils/fetcher";
+import { API_URLS } from '@config';
+
+import assertApiError from '@utils/assertApiError';
+import fetcher from '@utils/fetcher';
 import makeFetchOptions, {
   makeAuthFetchOptions,
-} from "@utils/makeFetchOptions";
-import { makeUrl } from "@utils/makeUrl";
+} from '@utils/makeFetchOptions';
+import { makeUrl } from '@utils/makeUrl';
 
 export const getUser = async () => {
   const resp = await fetcher.get(

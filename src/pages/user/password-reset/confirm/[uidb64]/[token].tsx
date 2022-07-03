@@ -1,14 +1,18 @@
-import Loader from "@components/Loader";
-import ErrorMsg from "@components/forms/ErrorMsg";
-import Form from "@components/forms/Form";
-import PassField from "@components/forms/PassField";
-import { SERVER_URLS } from "@config";
+import { useState } from 'react';
+
+import Link from 'next/link';
+
+import Loader from '@components/Loader';
+import ErrorMsg from '@components/forms/ErrorMsg';
+import Form from '@components/forms/Form';
+import PassField from '@components/forms/PassField';
+
+import { SERVER_URLS } from '@config';
+
 import {
   getResetPasswordConfirm,
   postResetPasswordConfirm,
-} from "@fetches/user";
-import Link from "next/link";
-import { useState } from "react";
+} from '@fetches/user';
 
 const { URL_PASSWORD_RESET } = SERVER_URLS;
 
@@ -31,8 +35,8 @@ const PasswordResetConfirm = ({
   const [loading, setLoading] = useState(false);
 
   const initValues = {
-    new_password1: "",
-    new_password2: "",
+    new_password1: '',
+    new_password2: '',
   } as PasswordResetConfirmFormData;
 
   const handleSubmit = async (values: any, { setStatus }: any) => {
@@ -57,7 +61,7 @@ const PasswordResetConfirm = ({
               </p>
             </div>
             <p className="text-light mb-4">
-              El link ha expirado o es invalido, vuelve a mandar el correo{" "}
+              El link ha expirado o es invalido, vuelve a mandar el correo{' '}
               <Link href={URL_PASSWORD_RESET}>
                 <a className="hover:underline">aquí</a>
               </Link>

@@ -1,15 +1,18 @@
-import { getUser } from "@fetches/user";
-import authStore from "@stores/AuthStore";
-import userStore from "@stores/UserStore";
-import { useEffect } from "react";
-import useSWR from "swr";
+import { useEffect } from 'react';
+
+import { getUser } from '@fetches/user';
+
+import authStore from '@stores/AuthStore';
+import userStore from '@stores/UserStore';
+
+import useSWR from 'swr';
 
 export const UserContextProvider = ({ children }: Props) => {
   const isAuth = authStore((state: any) => state.isAuth);
 
   const updateUser = userStore((state: any) => state.update);
   const { data: user, mutate: refeatchUser } = useSWR(
-    isAuth ? "user" : null,
+    isAuth ? 'user' : null,
     getUser
   );
 
