@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -e
 
-if [ "$1" = 'next-solocarro' ]; then
+if [ "$1" = 'front' ]; then
 	# Start server
 	echo "Starting server"
 	yarn start
@@ -12,6 +12,7 @@ elif [ "$1" = 'build' ]; then
 
 	# Start server
 	echo "Starting server"
+	yarn start
 fi
 
 exec "$@"
